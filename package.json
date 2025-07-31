@@ -1,6 +1,6 @@
 {
   "name": "gulp-image-fork",
-  "version": "9.2.2",
+  "version": "9.2.3",
   "description": "Optimize PNG, JPG, GIF, SVG images with gulp task.",
   "repository": "kathirr007/gulp-image",
   "author": {
