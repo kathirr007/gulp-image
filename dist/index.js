@@ -7,7 +7,8 @@ import isJpg from "is-jpg";
 import isGif from "is-gif";
 import isSvg from "is-svg";
 import optipng from "optipng-bin";
-import pngquant from "pngquant-bin";
+import "pngquant-bin";
+import PngQuant from "pngquant";
 import zopflipng from "zopflipng-bin";
 import jpegRecompress from "jpeg-recompress-bin";
 import mozjpeg from "mozjpeg";
@@ -39,14 +40,10 @@ function useOptipng(buffer, args) {
 	});
 }
 async function usePngquant(buffer, args) {
-	const parameters = Array.isArray(args) ? args : [
-		"--speed=1",
-		"--force",
-		256
-	];
+	const parameters = Array.isArray(args) ? args : ["--speed=1", "--quality=60-80"];
 	return execBuffer({
 		input: buffer,
-		bin: pngquant,
+		bin: PngQuant,
 		args: [
 			...parameters,
 			"--output",

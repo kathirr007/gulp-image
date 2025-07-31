@@ -30,7 +30,8 @@ const is_jpg = __toESM(require("is-jpg"));
 const is_gif = __toESM(require("is-gif"));
 const is_svg = __toESM(require("is-svg"));
 const optipng_bin = __toESM(require("optipng-bin"));
-const pngquant_bin = __toESM(require("pngquant-bin"));
+require("pngquant-bin");
+const pngquant = __toESM(require("pngquant"));
 const zopflipng_bin = __toESM(require("zopflipng-bin"));
 const jpeg_recompress_bin = __toESM(require("jpeg-recompress-bin"));
 const mozjpeg = __toESM(require("mozjpeg"));
@@ -62,14 +63,10 @@ function useOptipng(buffer, args) {
 	});
 }
 async function usePngquant(buffer, args) {
-	const parameters = Array.isArray(args) ? args : [
-		"--speed=1",
-		"--force",
-		256
-	];
+	const parameters = Array.isArray(args) ? args : ["--speed=1", "--quality=60-80"];
 	return (0, exec_buffer.default)({
 		input: buffer,
-		bin: pngquant_bin.default,
+		bin: pngquant.default,
 		args: [
 			...parameters,
 			"--output",
