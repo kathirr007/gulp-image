@@ -40,6 +40,7 @@
     "mozjpeg": "^8.0.0",
     "optipng-bin": "^9.0.0",
     "plugin-error": "^2.0.1",
+    "pngquant": "^4.2.0",
     "pngquant-bin": "^9.0.0",
     "pretty-bytes": "^7.0.0",
     "round10": "^1.0.3",
