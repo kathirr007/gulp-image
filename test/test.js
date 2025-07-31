@@ -5,11 +5,11 @@ import Vinyl from 'vinyl';
 import {pEvent} from 'p-event';
 import image from '../index.js';
 
-const testGif = new URL('./fixtures/test.gif', import.meta.url);
-const testJpg = new URL('./fixtures/test.jpg', import.meta.url);
-const testPng = new URL('./fixtures/test.png', import.meta.url);
-const testSvg = new URL('./fixtures/test.svg', import.meta.url);
-const testBmp = new URL('./fixtures/test.bmp', import.meta.url);
+const testGif = new URL('fixtures/test.gif', import.meta.url);
+const testJpg = new URL('fixtures/test.jpg', import.meta.url);
+const testPng = new URL('fixtures/test.png', import.meta.url);
+const testSvg = new URL('fixtures/test.svg', import.meta.url);
+const testBmp = new URL('fixtures/test.bmp', import.meta.url);
 
 const testGifSize = fs.statSync(testGif).size;
 const testJpgSize = fs.statSync(testJpg).size;
